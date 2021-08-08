@@ -9,6 +9,39 @@ Board::Board()
     turn = BLACK; // 黒から
 }
 
+bool Board::isFilled()
+{
+    bool flag = true;
+    for (int i = 0; i < CELL; i++)
+    {
+        for (int j = 0; j < CELL; j++)
+        {
+            if (getCell(j, i) == EMPTY)
+            {
+                flag = false;
+                break;
+            }
+        }
+    }
+    return flag;
+}
+
+int Board::count(int color)
+{
+    int cnt = 0;
+    for (int i = 0; i < CELL; i++)
+    {
+        for (int j = 0; j < CELL; j++)
+        {
+            if (getCell(j, i) == color)
+            {
+                cnt++;
+            }
+        }
+    }
+    return cnt;
+}
+
 bool Board::putDisk(Disk disk)
 {
     bool reversed = reverseDisks(disk);

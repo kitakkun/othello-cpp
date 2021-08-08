@@ -32,6 +32,8 @@ public:
     void changeTurn();           // ターンの変更
     int getTurn();               // 現在のターンを取得
     int getCell(int, int);       // (x, y)座標のセル情報の取得
+    bool isFilled();             // 配置できるエリアが存在しない
+    int count(int);              // 指定された色の石をカウントする
 
 private:
     void initMap();                            // 盤面情報の初期化

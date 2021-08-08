@@ -4,4 +4,4 @@
 #include <iostream>
 
 void draw(Board);
-void getUserInput(int *, int *);
+int getUserInput(int *, int *);

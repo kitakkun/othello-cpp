@@ -15,10 +15,15 @@ void draw(Board board)
     }
 }
 
-void getUserInput(int *x, int *y)
+int getUserInput(int *x, int *y)
 {
     cout << "x = ";
     cin >> *x;
     cout << "y = ";
     cin >> *y;
+    if (*x < 0 || *x > CELL || *y < 0 || *y > CELL)
+    {
+        return 1;
+    }
+    return 0;
 }
